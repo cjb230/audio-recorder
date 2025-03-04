@@ -1,0 +1,21 @@
+# /etc/systemd/system/audio-recorder.service
+[Unit]
+Description=Audio Recorder Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/cjb/.pyenv/versions/3.13.2/bin/python3.13 /home/cjb/repos/audio-recorder/main.py
+WorkingDirectory=/home/cjb/repos/audio-recorder
+Restart=always
+User=cjb
+Group=cjb
+Environment="PATH=/home/cjb/.pyenv/versions/3.13.2/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYENV_ROOT=/home/cjb/.pyenv"
+
+StandardOutput=journal
+StandardError=journal
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=multi-user.target
