@@ -1,0 +1,7 @@
+cffi==1.17.1
+numpy==2.2.3
+PyAudio==0.2.14
+pycparser==2.22
+setuptools==75.8.0
+soundfile==0.13.1
+webrtcvad==2.0.10
